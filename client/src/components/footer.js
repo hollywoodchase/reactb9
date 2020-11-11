@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
+import { Col } from "../components/grid";
 import '../App.css'
 import axios from 'axios'
 
@@ -10,12 +11,9 @@ class Footer extends Component {
         return (
             <div>
                 <header className="footer App-header" id="footer-container">
-                    <div className="footer-col col-8" >
-                        <section className="footer-section">
-                    
-                        </section>
-
-                    </div>
+                    <Col className="footer-col" size="md-12">
+                        *RB9
+                    </Col>
                 </header>
             </div>
         );

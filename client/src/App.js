@@ -6,6 +6,7 @@ import AddUser from "./components/addUser";
 import Transactions from "./components/transactions";
 import Nav from "./components/navbar";
 import Home from "./components/home";
+import Footer from "./components/footer";
 // import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,6 +27,7 @@ function App() {
             <Transactions />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

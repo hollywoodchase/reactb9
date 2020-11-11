@@ -1,32 +1,37 @@
-import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import '../App.css';
+import List from '../components/list';
+import withListLoading from '../components/withListLoading';
 import { Col, Row, Container } from "../components/grid";
+import Footer from "../components/footer"
 import axios from 'axios'
 
-class Home extends Component {
+function App() {
+  const ListLoading = withListLoading(List);
+  const [appState, setAppState] = useState({
+    loading: false,
+    repos: null,
+  });
 
-    render() {
-        console.log('navbar render, props: ')
-        console.log(this.props);
-        return (
-            <div>
-                <Container fluid>
-                    <Row>
-                        <Col size="md-12">
-                            <header className="home App-header" id="nav-container">
-                                <div className="home-col col-8" >
-                                    <section className="home-section">
-                                        <div className="welcome row">
-                                            <h1>Welcome home</h1>
-                                        </div>
-                                    </section>
-                                </div>
-                            </header>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-        );
-    }
+  useEffect(() => {
+    setAppState({ loading: true });
+    const apiUrl = 'http://localhost:8080/api/users';
+    axios.get(apiUrl).then((repos) => {
+      const allRepos = repos.data;
+      setAppState({ loading: false, repos: allRepos });
+    });
+  }, [setAppState]);
+  return (
+    <div className='App'>
+      <Container fluid className='repo-container'>
+        <Row>
+          <Col size="md-12">
+            <ListLoading isLoading={appState.loading} repos={appState.repos} />
+          </Col>
+        </Row>
+      </Container>
+      <Footer></Footer>
+    </div>
+  );
 }
-export default Home
+export default App;

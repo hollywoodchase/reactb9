@@ -41,21 +41,11 @@
   justify-content: center;
   background: #dd7225;
 }
-#demo {
-  background: black;
-}
-.carousel-item {
-  height: 74vh;
-  background: black;
-}
-.carousel-img {
-  width: 100%;
-}
 .signup-container {
   background-color: #dd7225;
   color: white;
   font-size: 30px;
-  height: 74vh;
+  height: 72.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +62,7 @@
 }
 #form {
   /* border: 2px solid blue; */
-  height: 80vh;
+  height: 72.5vh;
   background: #dd7225;
   display: flex;
   flex-direction: column;
@@ -81,15 +71,8 @@
 }
 .row {
   /* border: 5px solid maroon; */
-  height: 80vh;
+  height: 72.5vh;
   background: #dd7225;
-}
-.cal-div {
-  height: 73.5vh;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #nav-selection {
   color: purple;
@@ -103,4 +86,13 @@
 }
 .text-secondary {
   color: gold;
+}
+.footer {
+  text-align: center;
+  border: 2px solid green;
+  height: 7.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
